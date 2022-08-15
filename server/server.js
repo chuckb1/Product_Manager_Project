@@ -5,10 +5,10 @@ const cors = require('cors')
 
 app.use(cors());
 
-require("./server/config/mongoose.config");
+require("./config/mongoose.config");
 
 app.use(express.json(), express.urlencoded({extended: true}));
 
-require("./server/routes/product.routes")(app);
+require("./routes/product.routes")(app);
 
 app.listen(port, () => console.log(`Running on port ${port}!!`));
